@@ -13,4 +13,16 @@ public class TransactionService
         _transactions = transactions;
         _log = log;
     }
+
+    public bool Add(TransactionType type, string description, decimal amount){
+        if (amount <= 0) { return false; }
+        if (string.IsNullOrWhiteSpace(description)) { return false; }
+        _transactions.Add(
+            new Transaction(Guid.NewGuid(),
+            DateTimeOffset.Now,
+            type,
+            description,
+            amount));
+        return true;
+    }
 }
