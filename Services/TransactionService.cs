@@ -4,11 +4,11 @@ namespace BudgetTracker.Services;
 
 public class TransactionService
 {
-    private readonly List<Transaction> _transactions;
+    private readonly StorageService _transactions;
 
     private readonly Action<string> _log;
 
-    public TransactionService(List<Transaction> transactions, Action<string> log)
+    public TransactionService(StorageService transactions, Action<string> log)
     {
         _transactions = transactions;
         _log = log;
@@ -17,7 +17,7 @@ public class TransactionService
     public bool Add(TransactionType type, string description, decimal amount){
         if (amount <= 0) { return false; }
         if (string.IsNullOrWhiteSpace(description)) { return false; }
-        _transactions.Add(
+        _transactions.AddTransaction(
             new Transaction(Guid.NewGuid(),
             DateTimeOffset.Now,
             type,
@@ -32,13 +32,13 @@ public class TransactionService
             {
             return false;
             }
-        _transactions.Remove(transaction);
+        _transactions.RemoveTransaction(transaction);
         return true;
     }
 
     public bool TryGet(Guid id, out Transaction? transaction)
     {
-        transaction = _transactions.Find(item => item.Id == id);
+        transaction = _transactions.LoadTransactions().Find(item => item.Id == id);
         return transaction is not null;
     }
 
@@ -46,13 +46,13 @@ public class TransactionService
     {
         if(type == null)
         {
-          var matches = _transactions.Where(transaction => transaction.Timestamp.Date >= start.Date && transaction.Timestamp.Date <= end.Date);
+          var matches = _transactions.LoadTransactions().Where(transaction => transaction.Timestamp.Date >= start.Date && transaction.Timestamp.Date <= end.Date);
         //   if(matches == null){return Enumerable.Empty<Transaction>();} Unnötig weil where ein leeres IEnum returned
           return matches;
         }
         if(type == TransactionType.Income)
         {
-          var matchesIncome = _transactions.Where(
+          var matchesIncome = _transactions.LoadTransactions().Where(
             transaction => transaction.Timestamp.Date >= start.Date &&
             transaction.Timestamp.Date <= end.Date&&
             transaction.Type == TransactionType.Income);
@@ -61,7 +61,7 @@ public class TransactionService
         }
         if(type == TransactionType.Expense)
         {
-          var matchesExpense = _transactions.Where(
+          var matchesExpense = _transactions.LoadTransactions().Where(
             transaction => transaction.Timestamp.Date >= start.Date &&
             transaction.Timestamp.Date <= end.Date &&
             transaction.Type == TransactionType.Expense);

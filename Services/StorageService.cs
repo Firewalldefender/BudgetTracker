@@ -1,4 +1,4 @@
-using System.Transactions;
+using BudgetTracker.Models;
 using System.Text.Json;
 using System.Net.WebSockets;
 using System.Runtime.InteropServices;
@@ -22,7 +22,7 @@ public class StorageService
         Console.WriteLine("Transaction added.");
     }
 
-    private List<Transaction> LoadTransactions()
+    public List<Transaction> LoadTransactions() //ist public hier okay?
     {
         try
         {
