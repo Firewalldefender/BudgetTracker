@@ -17,9 +17,9 @@ public class StorageService
         public void AddTransaction(Transaction transaction)
     {
         var transactions = LoadTransactions();
-        // contacts.Add(contact);
-        // SaveContacts(contacts);
-        // Console.WriteLine("Contact added.");
+        transactions.Add(transaction);
+        SaveTransactions(transactions);
+        Console.WriteLine("Transaction added.");
     }
 
     private List<Transaction> LoadTransactions()
