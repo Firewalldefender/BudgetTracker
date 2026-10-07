@@ -28,12 +28,7 @@ public class TransactionService
 
     public bool Remove(Guid id)
     {   
-        if(!TryGet(id, out Transaction? transaction) || transaction is null)
-            {
-            return false;
-            }
-        _transactions.RemoveTransaction(transaction);
-        return true;
+        return _transactions.RemoveTransaction(id);
     }
 
     public bool TryGet(Guid id, out Transaction? transaction)

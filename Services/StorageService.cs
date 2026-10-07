@@ -22,6 +22,24 @@ public class StorageService
         Console.WriteLine("Transaction added.");
     }
 
+    public bool RemoveTransaction(Guid id)
+    {
+        var transactions = LoadTransactions();
+        var removed = transactions.RemoveAll(c => c.Id == id);
+        SaveTransactions(transactions);
+
+        if (removed > 0)
+        {            
+            Console.WriteLine("Transaction removed.");
+            return true;
+        }
+        else
+        {
+            Console.WriteLine("No transaction found with that ID.");
+            return false;
+        }
+    }
+
     public List<Transaction> LoadTransactions() //ist public hier okay?
     {
         try
