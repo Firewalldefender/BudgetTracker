@@ -34,8 +34,18 @@ public class StorageService
         {
             Console.WriteLine($"Error loading transactions:  {ex.Message}");
             return new List<Transaction>();
+        }}
+    
+        private void SaveTransactions(List<Transaction> transactions)
+    {
+        try
+        {
+            string json = JsonSerializer.Serialize(transactions, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(_filePath, json);
+        }
+        catch (Exception ex) when (ex is IOException || ex is JsonException)
+        {
+            Console.WriteLine($"Error saving transactions:  {ex.Message}");
         }
     }
-
-
-}
+    }
