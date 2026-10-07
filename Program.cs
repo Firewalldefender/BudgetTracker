@@ -2,4 +2,4 @@
 using BudgetTracker.Services;
 using BudgetTracker.Models;
 
-var service = new StorageService("data/storage.json");
+var storage = new StorageService("data/storage.json");
