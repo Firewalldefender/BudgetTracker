@@ -9,5 +9,5 @@ public class LoggerService
         transactionService.TransactionAdded += OnTransactionAdded;
     }
 
-        public void OnTransactionAdded(object? sender, TransactionAddedEvent e) => Console.WriteLine($"[LOG] [{e.AddedAt}]: {e.Transaction.Description} with + {e.Transaction.Amount} EUR");
+        public void OnTransactionAdded(object? sender, TransactionAddedEvent e) => File.AppendAllText("data/transactions.log", $"[LOG] [{e.AddedAt}]: {e.Transaction.Description} with {e.Transaction.Type} {e.Transaction.Amount} EUR" + Environment.NewLine);
 }
