@@ -1,0 +1,149 @@
+[
+  {
+    "Id": "b4b1a721-6218-4173-a034-96a998d0713d",
+    "Timestamp": "2026-10-08T14:34:02.504747+02:00",
+    "Type": 0,
+    "Description": "Work",
+    "Amount": 2000
+  },
+  {
+    "Id": "a53f0e6d-6a16-4d74-8263-edcdef0a50ff",
+    "Timestamp": "2026-10-08T14:34:02.54561+02:00",
+    "Type": 0,
+    "Description": "Work2",
+    "Amount": 220
+  },
+  {
+    "Id": "22461630-8d0e-4315-ab69-a1d58f93c17d",
+    "Timestamp": "2026-10-08T14:34:02.547832+02:00",
+    "Type": 0,
+    "Description": "Schweigegeild",
+    "Amount": 10000
+  },
+  {
+    "Id": "9cbbe64d-f34c-4d67-98e9-f4f1c2ed384f",
+    "Timestamp": "2026-10-08T16:56:56.726518+02:00",
+    "Type": 0,
+    "Description": "Work",
+    "Amount": 2000
+  },
+  {
+    "Id": "96ae4701-1bd2-47bc-9bd3-45e3dc14e9f9",
+    "Timestamp": "2026-10-08T16:56:56.770423+02:00",
+    "Type": 0,
+    "Description": "Work2",
+    "Amount": 220
+  },
+  {
+    "Id": "3a4eefa4-d4f6-4963-a1eb-121befb29f9b",
+    "Timestamp": "2026-10-08T16:56:56.77065+02:00",
+    "Type": 0,
+    "Description": "Schweigegeild",
+    "Amount": 10000
+  },
+  {
+    "Id": "36d691e9-be34-4e70-bf23-e207bf68602d",
+    "Timestamp": "2026-10-08T16:57:10.723449+02:00",
+    "Type": 0,
+    "Description": "Work",
+    "Amount": 2000
+  },
+  {
+    "Id": "ea860e02-6224-4128-9613-62389489c043",
+    "Timestamp": "2026-10-08T16:57:10.763469+02:00",
+    "Type": 0,
+    "Description": "Work2",
+    "Amount": 220
+  },
+  {
+    "Id": "2bacee02-de11-40e4-8390-98521bdd8028",
+    "Timestamp": "2026-10-08T16:57:10.763667+02:00",
+    "Type": 0,
+    "Description": "Schweigegeild",
+    "Amount": 10000
+  },
+  {
+    "Id": "97a897ca-f59e-418c-9b32-4450b0d50ff5",
+    "Timestamp": "2026-10-08T16:58:01.873427+02:00",
+    "Type": 0,
+    "Description": "Work",
+    "Amount": 2000
+  },
+  {
+    "Id": "f0622c39-ee9c-4508-b948-1dfa08b7a98d",
+    "Timestamp": "2026-10-08T16:58:01.918519+02:00",
+    "Type": 0,
+    "Description": "Work2",
+    "Amount": 220
+  },
+  {
+    "Id": "bdeb7800-3bc7-4e3b-84af-cebf4b9e4538",
+    "Timestamp": "2026-10-08T16:58:01.918737+02:00",
+    "Type": 0,
+    "Description": "Schweigegeild",
+    "Amount": 10000
+  },
+  {
+    "Id": "80213648-8d2b-4f5f-8899-96b251b169c1",
+    "Timestamp": "2026-10-08T16:59:25.167952+02:00",
+    "Type": 0,
+    "Description": "Work",
+    "Amount": 2000
+  },
+  {
+    "Id": "19f10ccc-1c61-4ca1-b946-688f58207b25",
+    "Timestamp": "2026-10-08T16:59:25.210662+02:00",
+    "Type": 0,
+    "Description": "Work2",
+    "Amount": 220
+  },
+  {
+    "Id": "4a0ff84b-949d-4782-af27-dd8615a04652",
+    "Timestamp": "2026-10-08T16:59:25.210891+02:00",
+    "Type": 0,
+    "Description": "Schweigegeild",
+    "Amount": 10000
+  },
+  {
+    "Id": "8fc9865a-944b-4899-9d02-87add15e70e0",
+    "Timestamp": "2026-10-08T17:02:45.088437+02:00",
+    "Type": 0,
+    "Description": "Work",
+    "Amount": 2000
+  },
+  {
+    "Id": "76f26dbf-a35e-47d6-a5e1-d7e41d9caa3e",
+    "Timestamp": "2026-10-08T17:02:45.132375+02:00",
+    "Type": 0,
+    "Description": "Work2",
+    "Amount": 220
+  },
+  {
+    "Id": "893251aa-b03f-4d30-a652-803d9128ed25",
+    "Timestamp": "2026-10-08T17:02:45.132636+02:00",
+    "Type": 0,
+    "Description": "Schweigegeild",
+    "Amount": 10000
+  },
+  {
+    "Id": "e1d3bc54-d160-498b-b461-04e975094044",
+    "Timestamp": "2026-10-08T17:04:11.741395+02:00",
+    "Type": 0,
+    "Description": "Work",
+    "Amount": 2000
+  },
+  {
+    "Id": "6a4e3b04-bb88-4c97-a644-47544fbf88c9",
+    "Timestamp": "2026-10-08T17:04:11.787568+02:00",
+    "Type": 0,
+    "Description": "Work2",
+    "Amount": 220
+  },
+  {
+    "Id": "cd651e4e-ba9f-4a66-a591-e1cac54cfeea",
+    "Timestamp": "2026-10-08T17:04:11.7878+02:00",
+    "Type": 0,
+    "Description": "Schweigegeild",
+    "Amount": 10000
+  }
+]
