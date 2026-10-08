@@ -2,7 +2,7 @@ using BudgetTracker.Models;
 
 namespace BudgetTracker.Events;
 
-public sealed class TransactionAddedEvent
+public sealed class TransactionAddedEvent : EventArgs
 {
     public TransactionAddedEvent(Transaction transaction)
     {

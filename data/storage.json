@@ -1,0 +1,23 @@
+[
+  {
+    "Id": "b4b1a721-6218-4173-a034-96a998d0713d",
+    "Timestamp": "2026-10-08T14:34:02.504747+02:00",
+    "Type": 0,
+    "Description": "Work",
+    "Amount": 2000
+  },
+  {
+    "Id": "a53f0e6d-6a16-4d74-8263-edcdef0a50ff",
+    "Timestamp": "2026-10-08T14:34:02.54561+02:00",
+    "Type": 0,
+    "Description": "Work2",
+    "Amount": 220
+  },
+  {
+    "Id": "22461630-8d0e-4315-ab69-a1d58f93c17d",
+    "Timestamp": "2026-10-08T14:34:02.547832+02:00",
+    "Type": 0,
+    "Description": "Schweigegeild",
+    "Amount": 10000
+  }
+]
