@@ -14,7 +14,7 @@ public class StorageService
         _filePath = filePath;
     }
 
-        public void AddTransaction(Transaction transaction)
+    public void AddTransaction(Transaction transaction)
     {
         var transactions = LoadTransactions();
         transactions.Add(transaction);

@@ -1,3 +1,4 @@
+using BudgetTracker.Events;
 using BudgetTracker.Models;
 
 namespace BudgetTracker.Services;
@@ -6,23 +7,24 @@ public class TransactionService
 {
     private readonly StorageService _storage;
 
-    private readonly Action<string> _log;
+    public event EventHandler<TransactionAddedEvent>? TransactionAdded;
 
-    public TransactionService(StorageService transactions, Action<string> log)
+    public TransactionService(StorageService transactions)
     {
         _storage = transactions;
-        _log = log;
     }
 
     public bool Add(TransactionType type, string description, decimal amount){
         if (amount <= 0) { return false; }
         if (string.IsNullOrWhiteSpace(description)) { return false; }
-        _storage.AddTransaction(
-            new Transaction(Guid.NewGuid(),
+        Transaction newTrans = new Transaction(
+            Guid.NewGuid(),
             DateTimeOffset.Now,
             type,
             description,
-            amount));
+            amount);
+        _storage.AddTransaction(newTrans);
+        OnTransactionAdded(new TransactionAddedEvent(newTrans));
         return true;
     }
 
@@ -65,6 +67,8 @@ public class TransactionService
         }
         return Enumerable.Empty<Transaction>(); //hier wird das leere IEnum returned
     }
+
+    protected virtual void OnTransactionAdded(TransactionAddedEvent e) => TransactionAdded?.Invoke(this, e);
 
 
 }
