@@ -70,7 +70,7 @@ class Menu
                 decimal amount = Decimal.Parse(Console.ReadLine());
                 service.Add(TransactionType.Income,description,amount);
                 Console.WriteLine($"====================================================="); 
-                Console.WriteLine($""); 
+                Console.WriteLine($"");
                 continue;
 
                 case "3":
@@ -120,6 +120,7 @@ class Menu
                 List<Transaction> transactions = storage.LoadTransactions();
                 foreach(Transaction transaction in transactions)
                     {
+                        Task.Delay(300);
                         Console.WriteLine($"-----------------------------------------------------");
                         Console.WriteLine($"Description: {transaction.Description}");
                         Console.WriteLine($"Amount: {transaction.Amount}");
@@ -128,8 +129,6 @@ class Menu
                         Console.WriteLine($"Type: {transaction.Type}");
                         Console.WriteLine($"-----------------------------------------------------");
                         Console.WriteLine($"");
-
-                        
                     }
                 Console.WriteLine($"=====================================================");
                 Console.WriteLine($"");
@@ -138,13 +137,43 @@ class Menu
                 case "7":
                 Console.WriteLine($"");
                 Console.WriteLine($"=====================================================");
-                Console.WriteLine($"You choose to load from a Start- to a End-Point.");
-                Console.WriteLine($"Please Type in a valid day (Start)");
-                var day_start = DateTimeOffset.Parse(Console.ReadLine());
-                
-
-                continue;
-
+                Console.WriteLine($"You choose to load from a Start- to a End-Point, may filtered by Income or Expense");
+                Console.WriteLine($"Please type in a valid day (Start)");
+                var day_start = DateTime.Parse(Console.ReadLine());
+                Console.WriteLine($"Please type in a valid day (End)");
+                var day_end = DateTime.Parse(Console.ReadLine());
+                Console.WriteLine($"Choose a Type:");
+                Console.WriteLine($"1 Income");
+                Console.WriteLine($"2 Expense");
+                Console.WriteLine($"3 Both");
+                string typeChoice = Console.ReadLine();
+                    switch (typeChoice)
+                    {
+                        case "1":
+                        foreach( Transaction transaction in service.Query(day_start, day_end, TransactionType.Income))
+                            {
+                            Console.WriteLine($"-----------------------------------------------------");
+                            Console.WriteLine($"Description: {transaction.Description}");
+                            Console.WriteLine($"Amount: {transaction.Amount}");
+                            Console.WriteLine($"Date: {transaction.Timestamp}");
+                            Console.WriteLine($"ID: {transaction.Id}");
+                            Console.WriteLine($"Type: {transaction.Type}");
+                            Console.WriteLine($"-----------------------------------------------------");
+                            Console.WriteLine($"");   
+                            }
+                            ;
+                        continue;
+                        case "2":
+                        service.Query(day_start,day_end,TransactionType.Expense);
+                        continue;
+                        case "3":
+                        service.Query(day_start, day_end,null);
+                        continue;
+                        default:
+                        Console.WriteLine($"Invalid option choose 1-3 next time returning to menu");
+                        continue;
+                        
+                    }                
         
                 case "8":
                 Console.WriteLine($"");
